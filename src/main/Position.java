@@ -9,9 +9,9 @@ package main;
  */
 public class Position {
 
-	public String name;
-	public double latitude;
-	public double longitude;
+	private String name;
+	private double latitude;
+	private double longitude;
 	
 	public Position (String name, double latitude, double longitude){
 		this.name = name;
@@ -42,6 +42,8 @@ public class Position {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+	
+
 	
 	
 }
