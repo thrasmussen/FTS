@@ -9,23 +9,25 @@ package main;
  */
 public class Position {
 
-	private String name;
 	private double latitude;
 	private double longitude;
+	private double height;
 	
-	public Position (String name, double latitude, double longitude){
-		this.name = name;
+	public Position (double latitude, double longitude, double height){
+
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.height = height;
 	}
 
-	public String getName() {
-		return name;
+	public double getHeight() {
+		return height;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setHeight(double height) {
+		this.height = height;
 	}
+
 
 	public double getLatitude() {
 		return latitude;

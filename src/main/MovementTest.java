@@ -1,33 +1,35 @@
 package main;
 
+import java.util.Scanner;
+
 public class MovementTest {
 
 	public static void main(String[] args) {
 		
+		Scanner reader = new Scanner(System.in);
 		
-		Position pos = new Position("SUT position", 59.164148, 5.599353);
-		Position tgtpos = new Position("TGT1 position", 59.164148, 5.599353);
-		OwnShip SUT = new OwnShip("HMS Neversail", 100, 25, pos, (3/4)* Math.PI, 0.001);
 		
-		StaticTarget tgt1 = new StaticTarget("Target 1", "Radar", "N/A", tgtpos );
-	
+		Position startpos = new Position(59.164148, 5.599353, 0);
+		StaticTarget tgt1 = new StaticTarget("Target 1", "Radar", "N/A", startpos );
+		OwnShip ownShip = new OwnShip("HMS Neversail", 100, 25, startpos, 3.444, 0.00001);
+		Sensor sensor1 = new Sensor("Sensor1", "radar", 0.1, 0.1, 0.1 , ownShip, null);
+		ownShip.run();
+	//	sensor1.run();
 		
-		System.out.println("HEADING: " + SUT.getHeadingDegrees());
-		
-		for (int i = 0; i < 1000; i++) {
-			System.out.println("SUT pos: " + SUT.getPos().getLatitude() + "," + SUT.getPos().getLongitude());
+		while (true) {
+			System.out.println("Enter new heading");
 			
-			System.out.println("angle: " + Math.toDegrees(GeoCalculations.geoAngleBetweenLocations(SUT.getPos(), tgt1.getPos())));
-			System.out.println("distance: " + GeoCalculations.geoDistanceInMetersBetweenLocation(SUT.getPos(), tgt1.getPos()));
+			double d = reader.nextDouble();
 			
-			
-			
-			
-			
-			//SUT.setHeading(SUT.getHeading()+ 0.01);
-			SUT.updatePosition();
 		}
 		
+		
+		
+		
+		
+
+		
+	
 		
 	}
 }
